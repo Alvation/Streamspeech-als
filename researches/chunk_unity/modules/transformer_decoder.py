@@ -12,7 +12,7 @@ from torch import Tensor
 from fairseq import utils
 from fairseq.distributed import fsdp_wrap
 from fairseq.models import FairseqIncrementalDecoder
-from fairseq.models.transformer import TransformerConfig
+from fairseq_modules.models.transformer import TransformerConfig
 from fairseq.modules import (
     AdaptiveSoftmax,
     BaseLayer,

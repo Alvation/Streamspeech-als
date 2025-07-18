@@ -1,6 +1,6 @@
 import logging
 from copy import deepcopy
-from fairseq.data.audio.data_cfg import S2SDataConfig
+from fairseq_modules.data.audio.data_cfg import S2SDataConfig
 
 logger = logging.getLogger(__name__)
 

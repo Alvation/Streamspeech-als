@@ -9,7 +9,7 @@ import os, glob
 import sys
 from typing import Dict, List, Optional, Tuple, Any
 import numpy as np
-from fairseq.tasks.speech_to_speech import SpeechToSpeechTask
+from fairseq_modules.tasks.speech_to_speech import SpeechToSpeechTask
 from ctc_unity.datasets.speech_to_speech_dataset_modified import (
     SpeechToSpeechDatasetModifiedCreator,
 )

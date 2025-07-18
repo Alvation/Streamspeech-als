@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from fairseq.tasks import register_task
-from fairseq.tasks.speech_to_speech import SpeechToSpeechTask
+from fairseq_modules.tasks.speech_to_speech import SpeechToSpeechTask
 from ctc_unity.datasets.speech_to_speech_dataset_modified import (
     SpeechToSpeechDatasetModifiedCreator,
 )

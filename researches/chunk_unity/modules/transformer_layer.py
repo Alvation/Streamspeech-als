@@ -10,7 +10,7 @@ import torch.nn as nn
 from torch import Tensor
 
 from fairseq import utils
-from fairseq.models.transformer import TransformerConfig
+from fairseq_modules.models.transformer import TransformerConfig
 from fairseq.modules import LayerNorm
 from uni_unity.modules.multihead_attention import MultiheadAttention
 from fairseq.modules.fairseq_dropout import FairseqDropout

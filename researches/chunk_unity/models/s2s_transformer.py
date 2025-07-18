@@ -18,11 +18,11 @@ from fairseq.models import (
     register_model,
     register_model_architecture,
 )
-from fairseq.models.speech_to_speech.modules.ctc_decoder import CTCDecoder
-from fairseq.models.speech_to_speech.modules.stacked_embedding import StackedEmbedding
+from fairseq_modules.models.speech_to_speech.modules.ctc_decoder import CTCDecoder
+from fairseq_modules.models.speech_to_speech.modules.stacked_embedding import StackedEmbedding
 from fairseq.models.speech_to_text import S2TTransformerEncoder
-from fairseq.models.text_to_speech import TTSTransformerDecoder
-from fairseq.models.transformer import Linear, TransformerModelBase
+from fairseq_modules.models.text_to_speech import TTSTransformerDecoder
+from fairseq_modules.models.transformer import Linear, TransformerModelBase
 
 from uni_unity.modules.transformer_decoder import TransformerDecoder
 

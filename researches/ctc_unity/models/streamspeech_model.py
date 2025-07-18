@@ -21,27 +21,27 @@ from fairseq.models import (
 )
 from ..avhubert.hubert_asr import AVHubertAsrConfig, HubertEncoderWrapper
 
-from fairseq.models.speech_to_speech.modules.ctc_decoder import CTCDecoder
-from fairseq.models.speech_to_speech.s2s_transformer import S2UTTransformerModel
+from fairseq_modules.models.speech_to_speech.modules.ctc_decoder import CTCDecoder
+from fairseq_modules.models.speech_to_speech.s2s_transformer import S2UTTransformerModel
 from ctc_unity.modules.ctc_decoder_with_transformer_layer import (
     CTCDecoderWithTransformerLayer,
 )
-from fairseq.models.speech_to_speech.modules.stacked_embedding import StackedEmbedding
-from fairseq.models.speech_to_speech.modules.transformer_decoder_aug import (
+from fairseq_modules.models.speech_to_speech.modules.stacked_embedding import StackedEmbedding
+from fairseq_modules.models.speech_to_speech.modules.transformer_decoder_aug import (
     AugTransformerUnitDecoder,
 )
 from ctc_unity.modules.transformer_encoder import (
     UniTransformerEncoderNoEmb,
 )
 from chunk_unity.models.s2s_conformer import ChunkS2UTConformerModel
-from fairseq.models.speech_to_speech.s2s_transformer import (
+from fairseq_modules.models.speech_to_speech.s2s_transformer import (
     base_multitask_text_transformer_decoder_arch,
     s2ut_architecture_base,
 )
 from chunk_unity.models.s2s_transformer import (
     TransformerUnitDecoder,
 )
-from fairseq.models.transformer import TransformerModelBase
+from fairseq_modules.models.transformer import TransformerModelBase
 from ctc_unity.modules.transformer_decoder import TransformerDecoder
 from ctc_unity.modules.ctc_transformer_unit_decoder import CTCTransformerUnitDecoder
 

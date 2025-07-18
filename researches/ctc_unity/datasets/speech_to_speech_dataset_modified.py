@@ -8,11 +8,11 @@ from fairseq.data.audio.speech_to_text_dataset import (
     _collate_frames,
     SpeechToTextDatasetCreator,
 )
-from fairseq.data.audio.audio_utils import get_features_or_waveform
+from fairseq_modules.data.audio.audio_utils import get_features_or_waveform
 from fairseq.data.audio.feature_transforms import CompositeAudioFeatureTransform
-from fairseq.data.audio.waveform_transforms import CompositeAudioWaveformTransform
-from fairseq.data.audio.speech_to_text_dataset import TextTargetMultitaskData
-from fairseq.data.audio.speech_to_speech_dataset import (
+from fairseq_modules.data.audio.waveform_transforms import CompositeAudioWaveformTransform
+from fairseq_modules.data.audio.speech_to_text_dataset import TextTargetMultitaskData
+from fairseq_modules.data.audio.speech_to_speech_dataset import (
     SpeechToSpeechDatasetItem,
     SpeechToSpeechDataset,
     SpeechToSpeechMultitaskDataset,

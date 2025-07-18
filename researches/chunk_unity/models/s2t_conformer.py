@@ -28,7 +28,7 @@ from fairseq.models.speech_to_text.s2t_transformer import (
 from fairseq.models.speech_to_text.s2t_transformer import (
     base_architecture as transformer_base_architecture,
 )
-from fairseq.modules import PositionalEmbedding, RelPositionalEncoding
+from fairseq_modules.modules import PositionalEmbedding, RelPositionalEncoding
 from chunk_unity.modules.conformer_layer import ChunkConformerEncoderLayer
 
 logger = logging.getLogger(__name__)
