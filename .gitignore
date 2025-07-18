@@ -1,0 +1,5 @@
+#备份
+researches_bak/
+
+#模型文件
+*.pt
