@@ -10,10 +10,8 @@ fairseq-train $DATA \
   --config-yaml config_gcmvn.yaml --multitask-config-yaml config_mtl_asr_st_ctcst.yaml \
   --task speech_to_speech_ctc --target-is-code --target-code-size 1000 --vocoder code_hifigan  \
   --criterion speech_to_unit_2pass_ctc_asr_st --label-smoothing 0.1 --rdrop-alpha 0.0 \
-  --arch streamspeech --share-decoder-input-output-embed \
-  --encoder-layers 12 --encoder-embed-dim 256 --encoder-ffn-embed-dim 2048 --encoder-attention-heads 4 \
+  --arch streamspeech \
   --translation-decoder-layers 4 --synthesizer-encoder-layers 2 \
-  --decoder-layers 2  --decoder-embed-dim 512 --decoder-ffn-embed-dim 2048 --decoder-attention-heads 8 \
   --k1 0 --k2 0 --n1 1 --n2 -1 \
   --chunk-size 999999 \
   --dropout 0.1 --attention-dropout 0.1 --relu-dropout 0.1 \

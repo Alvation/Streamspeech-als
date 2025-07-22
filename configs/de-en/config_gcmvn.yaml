@@ -143,6 +143,17 @@ model:
   ctc_upsample_rate: 25
   attn_type: espnet
   pos_enc_type: rel_pos
+  #MutiTasks args
+  share_decoder_input_output_embed: true
+  encoder_layers: 12 
+  encoder_embed_dim: 256 
+  encoder_ffn_embed_dim: 2048 
+  encoder_attention_heads: 4 
+  decoder_layers: 2 
+  decoder_embed_dim: 512 
+  decoder_ffn_embed_dim: 2048 
+  decoder_attention_heads: 8 
+  # relu_dropout: 0.1
 
 hydra:
   job:

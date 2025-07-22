@@ -194,7 +194,256 @@ class MMS_LLaMA_Config(AVHubertAsrConfig):
             "metavar": "N",
         },
     )
-
+    #MutiTasks args
+    #===============base_s2st_transformer_encoder======================
+    encoder_freezing_updates: int = field(
+        default=0,
+        metadata={
+            "help": "Number of initial updates where encoder parameters remain frozen",
+        },
+    )
+    input_channels: int = field(
+        default=1,
+        metadata={
+            "help": "Number of input channels for audio features",
+        },
+    )
+    conv_kernel_sizes: str = field(
+        default="5,5",
+        metadata={
+            "help": "Comma-separated convolutional kernel sizes for subsampling layers",
+        },
+    )
+    conv_channels: int = field(
+        default=1024,
+        metadata={
+            "help": "Number of channels in 1D convolutional subsampling layers",
+        },
+    )
+    conv_out_channels: int = field(
+        default=256,
+        metadata={
+            "help": "Output channels for 2D convolutional subsampling layers",
+        },
+    )
+    conv_version: str = field(
+        default="s2t_transformer",
+        metadata={
+            "help": "Version of convolutional architecture (e.g. s2t_transformer, vggnet)",
+        },
+    )
+    encoder_embed_dim: int = field(
+        default=512,
+        metadata={
+            "help": "Encoder embedding dimension",
+        },
+    )
+    encoder_ffn_embed_dim: int = field(
+        default=2048,
+        metadata={
+            "help": "Encoder hidden size for feed-forward networks",
+        },
+    )
+    encoder_layers: int = field(
+        default=12,
+        metadata={
+            "help": "Number of encoder layers",
+        },
+    )
+    encoder_attention_heads: int = field(
+        default=8,
+        metadata={
+            "help": "Number of attention heads in encoder",
+        },
+    )
+    encoder_normalize_before: bool = field(
+        default=True,
+        metadata={
+            "help": "Apply layer normalization before each encoder block",
+        },
+    )
+    no_scale_embedding: bool = field(
+        default=False,
+        metadata={
+            "help": "Disable scaling of embeddings by sqrt(embed_dim)",
+        },
+    )
+    dropout: float = field(
+        default=0.1,
+        metadata={
+            "help": "General dropout probability applied throughout the model",
+        },
+    )
+    attention_dropout: float = field(
+        default=0.1,
+        metadata={
+            "help": "Dropout probability for attention weights (defaults to dropout if not set)",
+        },
+    )
+    activation_dropout: float = field(
+        default=0.1,
+        metadata={
+            "help": "Dropout probability after activation functions (defaults to dropout if not set)",
+        },
+    )
+    activation_fn: str = field(
+        default="relu",
+        metadata={
+            "help": "Activation function to use (e.g. relu, gelu, swish)",
+        },
+    )
+    speaker_embed_dim: int = field(
+        default=256,
+        metadata={
+            "help": "Embedding dimension for speaker characteristics",
+        },
+    )
+    #===============base_s2st_transformer_decoder======================
+    decoder_embed_dim: int = field(
+        default=512,
+        metadata={
+            "help": "Decoder embedding dimension (defaults to encoder_embed_dim if not set)",
+        },
+    )
+    decoder_ffn_embed_dim: int = field(
+        default=2048,
+        metadata={
+            "help": "Decoder hidden size for feed-forward networks (defaults to encoder_ffn_embed_dim)",
+        },
+    )
+    decoder_layers: int = field(
+        default=6,
+        metadata={
+            "help": "Number of decoder layers",
+        },
+    )
+    decoder_attention_heads: int = field(
+        default=8,
+        metadata={
+            "help": "Number of attention heads in decoder",
+        },
+    )
+    decoder_normalize_before: bool = field(
+        default=True,
+        metadata={
+            "help": "Apply layer normalization before each decoder block",
+        },
+    )
+    decoder_learned_pos: bool = field(
+        default=False,
+        metadata={
+            "help": "Use learned positional embeddings in decoder",
+        },
+    )
+    adaptive_softmax_cutoff: Optional[str] = field(
+        default=None,
+        metadata={
+            "help": "Comma separated list of adaptive softmax cutoff points",
+        },
+    )
+    adaptive_softmax_dropout: float = field(
+        default=0,
+        metadata={
+            "help": "Dropout probability for adaptive softmax",
+        },
+    )
+    share_decoder_input_output_embed: bool = field(
+        default=False,
+        metadata={
+            "help": "Share decoder input and output embeddings",
+        },
+    )
+    no_token_positional_embeddings: bool = field(
+        default=False,
+        metadata={
+            "help": "Disable token positional embeddings in decoder",
+        },
+    )
+    adaptive_input: bool = field(
+        default=False,
+        metadata={
+            "help": "Use adaptive input embeddings",
+        },
+    )
+    decoder_layerdrop: float = field(
+        default=0.0,
+        metadata={
+            "help": "LayerDrop probability for decoder",
+        },
+    )
+    decoder_output_dim: int = field(
+        default=512,
+        metadata={
+            "help": "Output dimension of decoder (defaults to decoder_embed_dim)",
+        },
+    )
+    decoder_input_dim: int = field(
+        default=512,
+        metadata={
+            "help": "Input dimension of decoder (defaults to decoder_embed_dim)",
+        },
+    )
+    quant_noise_pq: float = field(
+        default=0,
+        metadata={
+            "help": "Quantization noise parameter for product quantization",
+        },
+    )
+    #===============ctc_unity_conformer_architecture_base======================
+    conv_version: str = field(
+        default="convtransformer",
+        metadata={
+            "help": "Type of convolutional architecture (e.g. convtransformer, s2t_transformer)",
+        },
+    )
+    attn_type: Optional[str] = field(
+        default=None,
+        metadata={
+            "help": "Attention mechanism type (e.g. local, sparse, multihead)",
+        },
+    )
+    pos_enc_type: str = field(
+        default="abs",
+        metadata={
+            "help": "Type of positional encoding (absolute, relative, rotary, etc.)",
+        },
+    )
+    # max_source_positions: int = field(
+    #     default=6000,
+    #     metadata={
+    #         "help": "Maximum input sequence length (in frames or tokens)",
+    #     },
+    # )
+    encoder_embed_dim: int = field(
+        default=256,
+        metadata={
+            "help": "Dimension of encoder embeddings",
+        },
+    )
+    encoder_ffn_embed_dim: int = field(
+        default=2048,
+        metadata={
+            "help": "Hidden size of encoder feed-forward networks",
+        },
+    )
+    encoder_attention_heads: int = field(
+        default=4,
+        metadata={
+            "help": "Number of attention heads in encoder layers",
+        },
+    )
+    dropout: float = field(
+        default=0.1,
+        metadata={
+            "help": "Global dropout rate applied throughout the model",
+        },
+    )
+    depthwise_conv_kernel_size: int = field(
+        default=31,
+        metadata={
+            "help": "Kernel size for depthwise convolutional layers",
+        },
+    )
 
 
 
@@ -565,6 +814,7 @@ class StreamSpeechModel(FairseqEncoderDecoderModel):
                     else None
                 ),
             )
+            
         if return_all_hiddens:
             decoder_out[-1]["encoder_states"] = encoder_out["encoder_states"]
             decoder_out[-1]["encoder_padding_mask"] = encoder_out[
@@ -612,14 +862,15 @@ class StreamSpeechModel(FairseqEncoderDecoderModel):
 
 # @register_model_architecture(model_name="streamspeech", arch_name="streamspeech")
 # def ctc_unity_conformer_architecture_base(args):
-#     args.conv_version = getattr(args, "conv_version", "convtransformer")
-#     args.attn_type = getattr(args, "attn_type", None)
-#     args.pos_enc_type = getattr(args, "pos_enc_type", "abs")
-#     args.max_source_positions = getattr(args, "max_source_positions", 6000)
-#     args.encoder_embed_dim = getattr(args, "encoder_embed_dim", 256)
-#     args.encoder_ffn_embed_dim = getattr(args, "encoder_ffn_embed_dim", 2048)
-#     args.encoder_attention_heads = getattr(args, "encoder_attention_heads", 4)
-#     args.dropout = getattr(args, "dropout", 0.1)
-#     args.encoder_layers = getattr(args, "encoder_layers", 16)
-#     args.depthwise_conv_kernel_size = getattr(args, "depthwise_conv_kernel_size", 31)
+    # args.conv_version = getattr(args, "conv_version", "convtransformer")
+    # args.attn_type = getattr(args, "attn_type", None)
+    # args.pos_enc_type = getattr(args, "pos_enc_type", "abs")
+    # args.max_source_positions = getattr(args, "max_source_positions", 6000)
+    # args.encoder_embed_dim = getattr(args, "encoder_embed_dim", 256)
+    # args.encoder_ffn_embed_dim = getattr(args, "encoder_ffn_embed_dim", 2048)
+    # args.encoder_attention_heads = getattr(args, "encoder_attention_heads", 4)
+    # args.dropout = getattr(args, "dropout", 0.1)
+    # args.encoder_layers = getattr(args, "encoder_layers", 16)
+    # args.depthwise_conv_kernel_size = getattr(args, "depthwise_conv_kernel_size", 31)
 #     s2ut_architecture_base(args)
+

@@ -10,7 +10,7 @@ from translatotron.datasets.speech_to_speech_data_cfg_modified import (
 )
 
 
-@register_task("speech_to_speech_modified")
+# @register_task("speech_to_speech_modified")
 class SpeechToSpeechTaskModified(SpeechToSpeechTask):
 
     def __init__(self, args, tgt_dict, infer_tgt_lang_id=None):

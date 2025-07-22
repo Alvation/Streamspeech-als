@@ -14,15 +14,17 @@ import torch
 import torch.nn as nn
 from fairseq import utils
 from fairseq.data import Dictionary
-from fairseq.data.audio.data_cfg import MultitaskConfig, S2SDataConfig
-from fairseq.data.audio.speech_to_speech_dataset import SpeechToSpeechDatasetCreator
-from fairseq.data.audio.speech_to_text_dataset import (
-    SpeechToTextDataset,
-    TextTargetMultitaskData,
-)
+from fairseq_modules.data.audio.data_cfg import MultitaskConfig, S2SDataConfig
+#没用到
+# from fairseq.data.audio.speech_to_speech_dataset import SpeechToSpeechDatasetCreator
+# from fairseq.data.audio.speech_to_text_dataset import (
+#     SpeechToTextDataset,
+#     TextTargetMultitaskData,
+# )
+#没用到
 from fairseq.tasks import LegacyFairseqTask, register_task
-from fairseq.tasks.speech_to_text import DummyMultiTask
-from fairseq.tasks.text_to_speech import batch_mel_cepstral_distortion
+# from fairseq.tasks.speech_to_text import DummyMultiTask
+# from fairseq.tasks.text_to_speech import batch_mel_cepstral_distortion
 
 logger = logging.getLogger(__name__)
 

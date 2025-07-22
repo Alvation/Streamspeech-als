@@ -11,11 +11,9 @@ fairseq-train $DATA \
   --task MMS_LLaMA_training --target-is-code --target-code-size 1000 --vocoder code_hifigan  \
   --criterion speech_to_unit_2pass_ctc_asr_st --label-smoothing 0.1 --rdrop-alpha 0.0 \
   --arch streamspeech --share-decoder-input-output-embed \
-  --encoder-layers 12 --encoder-embed-dim 256 --encoder-ffn-embed-dim 2048 --encoder-attention-heads 4 \
-  --decoder-layers 2  --decoder-embed-dim 512 --decoder-ffn-embed-dim 2048 --decoder-attention-heads 8 \
   --k1 0 --k2 0 --n1 1 --n2 -1 \
   --multichunk \
-  --dropout 0.1 --attention-dropout 0.1 --relu-dropout 0.1 \
+  --dropout 0.1 --attention-dropout 0.1\
   --train-subset train --valid-subset dev \
   --save-dir researches/ctc_unity/checkpoints/$model \
   --validate-interval 1000 --validate-interval-updates 1000 \
